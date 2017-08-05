@@ -1,4 +1,46 @@
 
+var $deal = $(".deal");
+var $flop = $(".flop")
+var $card1 = $(".card1")
+var $card2 = $(".card2")
+var $card3 = $(".card3")
+var $card4 = $(".card4")
+var $card5 = $(".card5")
+var $one = $(".one")
+var $two = $(".two")
+
+
+
+
+
+
+
+
+
+function append(c, source,){
+	var first = $('<img />', {
+		"class": c,
+		"src": source
+	});
+	$(c).empty();
+	first.appendTo($(c))
+}
+
+
+
+
+
+// function append2(){
+// 	var c = []
+
+// 	for (var i = 1; i < 5; i++){
+// 	c.push("$card" + i)
+// 	append(c,"cardImages/" + deck[i] + ".png")
+	
+// 	}
+
+
+// }
 
 
 
@@ -22,7 +64,7 @@ function makeSuit(s){
 }
 
 
-function makeDeck(){
+function flop(){
 	var spades = makeSuit("Spades")
 	var diamonds = makeSuit("Diamonds")
 	var hearts = makeSuit("Hearts")
@@ -30,8 +72,17 @@ function makeDeck(){
 	var deck = spades.concat(diamonds, hearts, clubs)
 	deck.sort()
 	shuffleDeck(deck);
-	return deck
+	append($one, ("cardImages/" + deck[3] + ".png")) 
+	append($two, ("cardImages/" + deck[4] + ".png"))
+	append($card1, ("cardImages/" + deck[0] + ".png"))
+	append($card2, ("cardImages/" + deck[1] + ".png"))
+	append($card3, ("cardImages/" + deck[2] + ".png"))
+	return deck.slice(0, 3)
+	
+	
 }
+
+
 
 	
 function shuffleDeck(array){
@@ -46,7 +97,19 @@ function shuffleDeck(array){
 	return array;
 }
 
+	
 
 
 
+function click(thebutton){
+	thebutton.on("click", function(event){
+		event.preventDefault();
+		console.log(flop());
 
+
+		
+
+	})
+}
+
+click($flop)

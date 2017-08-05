@@ -1,0 +1,47 @@
+.header {
+	text-align: center;
+	border: 2px solid black;
+}
+
+.button {
+	padding-top: 10%;
+	text-align: center;
+	
+}
+
+.hand {
+	text-align: center;
+	border: 2px solid black;
+}
+
+
+.cards {
+	padding-top: 10%;
+}
+
+.card1 {
+	
+	
+}
+
+.card2 {
+	
+}
+
+.card3 {
+	
+
+}
+.card4 {
+	
+}
+
+.card5 {
+	
+}
+
+
+img {
+	max-width: 150%;
+	max-height: 150%
+}
